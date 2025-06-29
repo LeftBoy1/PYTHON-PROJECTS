@@ -1,6 +1,6 @@
 print("********** V O L U M E   C O N V E R T E R **********\n")
 
-# Volume units and their equivalent in liters (base unit)
+
 volume_units = {
     "l": 1,
     "ml": 0.001,
@@ -25,9 +25,8 @@ if from_unit not in volume_units or to_unit not in volume_units:
 else:
     value = float(input(f"Enter the value in {from_unit}: "))
 
-    # Convert input value to liters first
+    
     value_in_liters = value * volume_units[from_unit]
-    # Convert liters to target unit
     result = value_in_liters / volume_units[to_unit]
 
     print(f"\n{value} {from_unit} = {result:.4f} {to_unit}")

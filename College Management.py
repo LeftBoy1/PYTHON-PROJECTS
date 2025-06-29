@@ -112,7 +112,7 @@ while True:
     r, q, l, p = mark(firstname, lastname, b, f, e, gender, c, d, x, city, state)
 
 
-    save_path = r"F:\Devansh Gupta\Python Basic & ADVANCED\PYTHON PROJECTS"             
+    save_path = r"PASTE YOUR DIRECTORY PATH"             
     os.makedirs(save_path, exist_ok=True)
     filename = "_".join(name_parts) + ".txt"
     full_path = os.path.join(save_path, filename)
@@ -140,7 +140,7 @@ while True:
         file.write(f"Total Percentage: {l}\n")
         file.write(f"Total CGPA: {p}\n")
 
-    print(f"\n✅ Information saved in file: {full_path}")
+    print(f"\nInformation saved in file: {full_path}")
 
 
     t = input("\nDo you want to enter another student's details? (y/n): ")

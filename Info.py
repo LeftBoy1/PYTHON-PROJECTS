@@ -2,7 +2,6 @@ import time
 import os
 import cv2
 
-# Predefined valid data for checking
 valid_countries = ["india", "japan", "america", "canada", "australia"]
 valid_states = {
     "india": ["rajasthan", "uttar pradesh", "maharashtra", "gujarat","delhi","andhra pradesh","arunavhal pradesh",],
@@ -38,7 +37,7 @@ def calling(firstname, lastname):
             case _:
                 print("Please Enter Valid Gender")
 
-# Get name
+
 while True:
     a = input("Enter your full name: ").strip().lower()
     name_parts = a.split()
@@ -47,11 +46,11 @@ while True:
         lastname = name_parts[-1]
         break
     else:
-        print("❌ Please enter at least first and last name using SPACE")
+        print("Please enter at least first and last name using SPACE")
 
 calling(firstname, lastname)
 
-# Time and greeting
+
 a = time.localtime().tm_hour
 b = time.localtime().tm_min
 c = time.localtime().tm_sec
@@ -75,9 +74,9 @@ def info():
             if 0 < e <= 120:
                 break
             else:
-                print("❌ Age must be between 1 and 120.")
+                print("Age must be between 1 and 120.")
         except ValueError:
-            print("❌ Please enter a valid number for age.")
+            print("Please enter a valid number for age.")
 
     while True:
         f = input("Enter your D.O.B (DDMMYYYY): ")
@@ -102,7 +101,7 @@ def info():
         if r.endswith("@gmail.com"):
             break
         else:
-            print("❌ Please enter a valid Gmail address (must end with @gmail.com)")
+            print("Please enter a valid Gmail address (must end with @gmail.com)")
 
     t = input("Enter your Address: ")
 
@@ -111,21 +110,21 @@ def info():
         if w in valid_countries:
             break
         else:
-            print("❌ Invalid country. Try one of:", ", ".join(valid_countries))
+            print("Invalid country. Try one of:", ", ".join(valid_countries))
 
     while True:
         p = input("Enter your State Name: ").lower()
         if p in valid_states.get(w, []):
             break
         else:
-            print("❌ Invalid state for selected country. Try one of:", ", ".join(valid_states.get(w, [])))
+            print("Invalid state for selected country. Try one of:", ", ".join(valid_states.get(w, [])))
 
     while True:
         m = input("Enter your City Name: ").lower()
         if m in valid_cities.get(p, []):
             break
         else:
-            print("❌ Invalid city for selected state. Try one of:", ", ".join(valid_cities.get(p, [])))
+            print("Invalid city for selected state. Try one of:", ", ".join(valid_cities.get(p, [])))
 
     print("\nYOUR'S-")
     print("      Name: ", "".join(name_parts))
@@ -141,7 +140,6 @@ def info():
 
     return e, f, x, g, r, t, w, p, m
 
-# Call info function
 e, f, x, g, r, t, w, p, m = info()
 
 def optional():
@@ -156,14 +154,14 @@ def optional():
                         print("Checking....")
                         cap = cv2.VideoCapture(0)
                         if not cap.isOpened():
-                            print("❌ Unable to access the camera")
+                            print("Unable to access the camera")
                         else:
                             start_time = time.time()
                             print("Opening 📷Camera")
                             while True:
                                 ret, frame = cap.read()
                                 if not ret:
-                                    print("❌ Failed to grab frame")
+                                    print("Failed to grab frame")
                                     break
                                 cv2.imshow("Your Camera View", frame)
                                 if time.time() - start_time > 5:
@@ -174,30 +172,25 @@ def optional():
                             cv2.destroyAllWindows()
                         time.sleep(2)
                         print("Let's go\nYOUR BEAUTY LEVEL COMES 100%\nYEAHHHHH!!!!!!!")
-                    elif ready == "no":
-                        print("But I’ll tell you anyway")
-                        print("Checking....")
-                        time.sleep(5)
-                        print("Soooooooo\nYOUR BEAUTY LEVEL COMES 100%\nYEAHHHHH!!!!!!!")
                     else:
-                        print("I’ll take that as a yes 😉\nYOUR BEAUTY LEVEL COMES 100%!")
+                        print("I\'ll take that as a yes \nYOUR BEAUTY LEVEL COMES 100%!")
                     break
                 elif pr == "no":
-                    print("Ok, I think you are confident, That's Nice😊")
+                    print("Ok, I think you are confident, That's Nice")
                     break
                 else:
-                    print("❌ Please type only 'yes' or 'no'.")
+                    print("Please type only 'yes' or 'no'.")
             break
         elif qw == "2":
-            print("Bye👋")
+            print("Bye")
             break
         else:
-            print("❌ Enter only 1 OR 2")
+            print("Enter only 1 OR 2")
 
 optional()
 
 # Save file
-save_path = r"F:\\Devansh Gupta\\Python Basic\\Personal Data"
+save_path = r"PASTE YOUR DIRECTORY PATH"
 os.makedirs(save_path, exist_ok=True)
 filename = "_".join(name_parts) + ".txt"
 full_path = os.path.join(save_path, filename)
@@ -215,6 +208,6 @@ with open(full_path, "w") as file:
     file.write(f"City Name: {m}\n")
     file.write(f"Address: {t}\n")
 
-print(f"\n✅ Information saved in file: {full_path}")
+print(f"\nInformation saved in file: {full_path}")
 print("\nInterrogation Is Completed Now.\n")
 

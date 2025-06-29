@@ -2,7 +2,7 @@ a= input("Enter Your First No.: ")
 b= input("Enter Your Second No.: ")
 c= input("Enter Your Operator: \n 1.ADDITION \n 2.Subtraction \n 3.Multiplication \n 4.Division \n 5.Percentage \n =>")
 
-# operation = input()
+
 
 if c =="1":
      

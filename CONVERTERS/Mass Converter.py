@@ -1,6 +1,6 @@
 print("********** M A S S   C O N V E R T E R **********\n")
 
-# Mass units and their equivalent in kilograms (base unit)
+
 mass_units = {
     "kg": 1,
     "g": 0.001,
@@ -23,7 +23,7 @@ if from_unit not in mass_units or to_unit not in mass_units:
 else:
     value = float(input(f"Enter the value in {from_unit}: "))
 
-    # Convert value to kilograms first, then to target unit
+
     value_in_kg = value * mass_units[from_unit]
     result = value_in_kg / mass_units[to_unit]
 

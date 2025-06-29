@@ -66,8 +66,6 @@ while True:
     
     print(f"\nYou: {options[user]}")
     print(f"Computer: {options[comp]}")
-    # print(f"You: {user}")
-    # print(f"Computer: {comp}")
 
     if (score == 0):
         print("Its Draw!!!")

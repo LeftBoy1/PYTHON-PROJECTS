@@ -1,6 +1,6 @@
 print("********** L E N G T H   C O N V E R T E R **********\n")
 
-# Length units and their equivalent in meters (base unit)
+
 length_units = {
     "m": 1,
     "km": 1000,

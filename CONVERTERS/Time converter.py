@@ -1,6 +1,5 @@
 print("********** T I M E   C O N V E R T E R **********\n")
 
-# Time units and their equivalent in seconds (base unit)
 time_units = {
     "s": 1,
     "min": 60,
@@ -23,9 +22,9 @@ if from_unit not in time_units or to_unit not in time_units:
 else:
     value = float(input(f"Enter the value in {from_unit}: "))
 
-    # Convert input value to seconds first
+
     value_in_seconds = value * time_units[from_unit]
-    # Convert seconds to target unit
+
     result = value_in_seconds / time_units[to_unit]
 
     print(f"\n{value} {from_unit} = {result:.4f} {to_unit}")

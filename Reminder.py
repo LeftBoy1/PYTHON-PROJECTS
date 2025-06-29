@@ -11,11 +11,10 @@ while True:
     now = datetime.datetime.now().strftime("%I:%M %p")
     if now == target_time:
         pygame.mixer.init()
-        pygame.mixer.music.load("F:\\Devansh Gupta\\Python Basic\\PYTHON PROJECTS\\FREEBEAT.mp3")
+        pygame.mixer.music.load("FREEBEAT.mp3")
         pygame.mixer.music.play()
         print("Reminder: Do your task!")
         
-        # ⏳ Wait while music is playing
         while pygame.mixer.music.get_busy():
             time.sleep(1)
         break
